@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Action Games Review</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background-color: #121212;
+    color: #fff;
+  }
+  header {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #222;
+  }
+  nav a {
+    color: #ddd;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  nav a:hover {
+    background: #444;
+  }
+  main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  footer {
+    background: #1e1e1e;
+    color: #999;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  h2 {
+    border-bottom: 2px solid #ff4500;
+    padding-bottom: 0.5rem;
+  }
+  p {
+    line-height: 1.6;
+  }
+  .review {
+    margin-bottom: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<header>Action Games Review Hub</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main id="content">
+  <!-- Content for each page here -->
+</main>
+
+<footer>
+  &copy; 2025 Action Games Review Hub
+</footer>
+
+<script>
+// Simple page router for demonstration
+const content = document.getElementById('content');
+const path = location.pathname.split("/").pop();
+
+function loadPage(page) {
+  if (page === "index.html" || page === "") {
+    content.innerHTML = `
+      <h2>Welcome to Action Games Review Hub</h2>
+      <p>Discover latest reviews, gameplay tips, and ratings of popular action games.</p>
+      <p>Navigate to the Reviews page to read detailed game assessments or Contact to reach out.</p>
+    `;
+  } else if (page === "reviews.html") {
+    content.innerHTML = `
+      <h2>Game Reviews</h2>
+      <div class="review">
+        <h3>Game: "Velocity Vortex"</h3>
+        <p>A fast-paced shooter with stunning visuals and tight controls, Velocity Vortex keeps players on the edge with its relentless action and challenging boss fights.</p>
+      </div>
+      <div class="review">
+        <h3>Game: "Shadow Strike"</h3>
+        <p>An intense stealth-action game that blends strategy with heart-pounding combat. Shadow Strike is perfect for players who enjoy tactical gameplay and rich storytelling.</p>
+      </div>
+      <div class="review">
+        <h3>Game: "Blaze Runner"</h3>
+        <p>A high-speed parkour and combat mix, Blaze Runner offers a dynamic open world and fluid movements that thrill every action enthusiast.</p>
+      </div>
+    `;
+  } else if (page === "contact.html") {
+    content.innerHTML = `
+      <h2>Contact Us</h2>
+      <p>Have questions or want to suggest a game for review? Reach out to us!</p>
+      <form>
+        <label>Name:<br /><input type="text" name="name" required /></label><br /><br />
+        <label>Email:<br /><input type="email" name="email" required /></label><br /><br />
+        <label>Message:<br /><textarea name="message" rows="5" required></textarea></label><br /><br />
+        <button type="submit">Send</button>
+      </form>
+    `;
+  } else {
+    content.innerHTML = `
+      <h2>404 - Page Not Found</h2>
+      <p>Sorry, the page you're looking for does not exist.</p>
+    `;
+  }
+}
+
+// Initialize page content load
+loadPage(path);
+</script>
+
+</body>
+</html>
